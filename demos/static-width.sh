@@ -20,18 +20,18 @@
 # value of true.                                                                   #
 # -------------------------------------------------------------------------------- #
 
-export screen_width=100
+export screen_width=90
 
 # shellcheck disable=SC1091
 source ../src/draw-lines.sh
 
 
 draw_line
-align_right "hello world"
-align_right "hello world" 4
-align_left "hello world"
-align_left "hello world" 4
-align_center "hello world"
+align_right "Wolf Software"
+align_right "Wolf Software" 4
+align_left "Wolf Software"
+align_left "Wolf Software" 4
+align_center "Wolf Software"
 
 # -------------------------------------------------------------------------------- #
 # End of Script                                                                    #
