@@ -28,7 +28,7 @@ declare reset_line_color
 
 local_screen_width=128
 local_line_color=''
-local_reset_color=''
+local_reset_line_color=''
 
 # -------------------------------------------------------------------------------- #
 # Set Global Variables                                                             #
@@ -42,13 +42,13 @@ local_reset_color=''
 function setup_global_variables
 {
     if [[ -n "${screen_width}" ]]; then
-         local_screen_width=$screen_width
+         local_screen_width="${screen_width}"
     fi
     if [[ -n "${line_color}" ]]; then
-         local_line_color=$line_color
+         local_line_color="${line_color}"
     fi
-    if [[ -n "${reset_color}" ]]; then
-         local_reset_color=$reset_color
+    if [[ -n "${reset_line_color}" ]]; then
+         local_reset_line_color="${reset_line_color}"
     fi
 }
 
@@ -93,7 +93,7 @@ function draw_line()
     do
         line+="$line";
     done
-    printf '%s%s%s%s%s\n' "${local_line_color}" "$start" "${line:0:local_screen_width}" "$end" "${local_reset_color}"
+    printf '%s%s%s%s%s\n' "${local_line_color}" "$start" "${line:0:local_screen_width}" "$end" "${local_reset_line_color}"
 }
 
 # -------------------------------------------------------------------------------- #
@@ -116,7 +116,7 @@ function align_right()
     while ((${#left_line} < left_width)); do left_line+="$left_line"; done
     while ((${#right_line} < right_width)); do right_line+="$right_line"; done
 
-    printf '%s%s%s%s%s %s %s%s%s%s%s\n' "${local_line_color}"  "$start" "${left_line:0:left_width}" "$end" "${local_reset_color}" "${1}" "${local_line_color}" "$start" "${right_line:0:right_width}" "$end" "${local_reset_color}"
+    printf '%s%s%s%s%s %s %s%s%s%s%s\n' "${local_line_color}"  "$start" "${left_line:0:left_width}" "$end" "${local_reset_line_color}" "${1}" "${local_line_color}" "$start" "${right_line:0:right_width}" "$end" "${local_reset_line_color}"
 }
 
 # -------------------------------------------------------------------------------- #
@@ -139,7 +139,7 @@ function align_left()
     while ((${#left_line} < left_width)); do left_line+="$left_line"; done
     while ((${#right_line} < right_width)); do right_line+="$right_line"; done
 
-    printf '%s%s%s%s%s %s %s%s%s%s%s\n' "${local_line_color}"  "$start" "${left_line:0:left_width}" "$end" "${local_reset_color}" "${1}" "${local_line_color}" "$start" "${right_line:0:right_width}" "$end" "${local_reset_color}"
+    printf '%s%s%s%s%s %s %s%s%s%s%s\n' "${local_line_color}"  "$start" "${left_line:0:left_width}" "$end" "${local_reset_line_color}" "${1}" "${local_line_color}" "$start" "${right_line:0:right_width}" "$end" "${local_reset_line_color}"
 }
 
 # -------------------------------------------------------------------------------- #
@@ -165,7 +165,7 @@ function align_center()
     while ((${#left_line} < left_width)); do left_line+="$left_line"; done
     while ((${#right_line} < right_width)); do right_line+="$right_line"; done
 
-    printf '%s%s%s%s%s %s %s%s%s%s%s\n' "${local_line_color}"  "$start" "${left_line:0:left_width}" "$end" "${local_reset_color}" "${1}" "${local_line_color}" "$start" "${right_line:0:right_width}" "$end" "${local_reset_color}"
+    printf '%s%s%s%s%s %s %s%s%s%s%s\n' "${local_line_color}"  "$start" "${left_line:0:left_width}" "$end" "${local_reset_line_color}" "${1}" "${local_line_color}" "$start" "${right_line:0:right_width}" "$end" "${local_reset_line_color}"
 }
 
 # -------------------------------------------------------------------------------- #

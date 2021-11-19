@@ -20,10 +20,14 @@
 # value of true.                                                                   #
 # -------------------------------------------------------------------------------- #
 
-export screen_width=150
-export line_color=$(tput setaf 3)
-export reset_color=$(tput sgr0)
+export screen_width
+export line_color
+export reset_line_color
 
+
+screen_width=150
+line_color=$(tput setaf 3)
+reset_line_color=$(tput sgr0)
 
 bold=$(tput bold)
 text_color=$(tput setaf 6)
