@@ -20,7 +20,7 @@
 # value of true.                                                                   #
 # -------------------------------------------------------------------------------- #
 
-export screen_width=90
+export screen_width=98
 
 # shellcheck disable=SC1091
 source ../src/draw-lines.sh
