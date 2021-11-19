@@ -158,7 +158,7 @@ function align_center()
     local left_line='qqqqqqqqqqqqqqqq' left_width=$(( (local_screen_width - (textsize + 2)) / 2 ))
     local right_line='qqqqqqqqqqqqqqqq' right_width=$(( (local_screen_width - (textsize + 2)) / 2 ))
 
-    if [[ $(( left_width + right_width + textsize + 2 )) < ${local_screen_width} ]]; then
+    if (( ( left_width + right_width + textsize + 2 ) < local_screen_width )); then
         right_width=$(( right_width + 1 ))
     fi
 
